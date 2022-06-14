@@ -56,9 +56,9 @@ function my_keydown(e)
 	And id coordinates matches them remove ball image, 
 	display "GAME OVER!!!" 
 	and make canvas border 'red'. */
-	if(( ball_x==hole)&&(ball_y==hole_y)){
+	if(( ball_x==hole_x)&&(ball_y==hole_y)){
 		canvas.remove(ball_obj);
-		document.getElementById("hd3").innerHtml="you have hit thegoal!!";
+		document.getElementById("hd3").innerHtml="you have hit the goal!!";
 		document.getElementById("myCanvas").style.borderColor="red";
 	}
 	
@@ -100,8 +100,8 @@ function my_keydown(e)
 	function down()
 	{
 		 // Write a code to move ball downward.
-		 if(ball_y >= 450){
-			ball_y = ball_y - block_image_height;
+		 if(ball_y <= 450){
+			ball_y = ball_y + block_image_height;
 			console.log("block image height="+block_image_height);
 			console.log("down key Pressed,x="+ball_x+",y="+ball_y);
 			canvas.remove(ball_obj);
@@ -111,12 +111,12 @@ function my_keydown(e)
 
 	function left()
 	{
-		if(ball_x >5)
+		if(ball_x >=5)
 		{
 			// Write a code to move ball left side.
 			
 				ball_x = ball_x - block_image_height;
-				console.log("block image Weidth="+block_image_weidth);
+				console.log("block image Width="+block_image_width);
 				console.log("left key Pressed,x="+ball_x+",y="+ball_y);
 				canvas.remove(ball_obj);
 				new_image();
@@ -129,8 +129,8 @@ function my_keydown(e)
 		{
 			// Write a code to move ball right side.
 			
-				ball_x = ball_x - block_image_height;
-				console.log("block image Weidth="+block_image_weidth);
+				ball_x = ball_x + block_image_height;
+				console.log("block image Width="+block_image_width);
 				console.log("left key Pressed,x="+ball_x+",y="+ball_y);
 				canvas.remove(ball_obj);
 				new_image();
